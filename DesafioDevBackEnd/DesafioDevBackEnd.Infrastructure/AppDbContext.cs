@@ -1,4 +1,5 @@
 ﻿using DesafioDevBackEnd.Domain.Entities;
+using DesafioDevBackEnd.Infrastructure.Seeds;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
@@ -23,11 +24,17 @@ namespace DesafioDevBackEnd.Infrastructure
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            LoadingSeed(modelBuilder);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
+        }
+
+        protected static void LoadingSeed(ModelBuilder modelBuilder)
+        {
+            new Seed().UserSeed(modelBuilder.Entity<TransactionType>());
         }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)

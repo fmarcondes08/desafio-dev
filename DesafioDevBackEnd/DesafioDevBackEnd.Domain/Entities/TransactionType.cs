@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DesafioDevBackEnd.Domain.Entities
 {
-    [Table("TransactionType")]
+    [Table("TransactionTypes")]
     public class TransactionType : BaseEntity
     {
         public string Description { get; set; }

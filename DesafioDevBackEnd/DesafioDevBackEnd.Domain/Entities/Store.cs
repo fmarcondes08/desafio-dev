@@ -1,11 +1,8 @@
-﻿using DesafioDevBackEnd.Domain.Entities.Base;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.Collections.Generic;
 
 namespace DesafioDevBackEnd.Domain.Entities
 {
-    [Table("Stores")]
-    public class Store : BaseEntity
+    public class Store
     {
         public string Name { get; set; }
         public List<Transaction> Transactions { get; set; }

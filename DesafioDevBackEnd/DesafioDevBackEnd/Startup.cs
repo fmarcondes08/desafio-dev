@@ -11,17 +11,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DesafioDevBackEnd.Application.Extensions;
 
 namespace DesafioDevBackEnd
 {
     public class Startup
     {
+        private readonly IConfiguration _configuration;
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            _configuration = configuration;
         }
-
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -32,6 +32,9 @@ namespace DesafioDevBackEnd
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DesafioDevBackEnd", Version = "v1" });
             });
+
+            services
+                .AddDatabase(_configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

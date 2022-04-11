@@ -11,7 +11,6 @@ namespace DesafioDevBackEnd.Domain.Entities
         public string Nature { get; set; }
         public string Signal { get; set; }
         public long Type { get; set; }
-
-        public virtual ICollection<Transaction> Transactions { get; set; }
+        public ICollection<Transaction> Transactions { get; set; }
     }
 }

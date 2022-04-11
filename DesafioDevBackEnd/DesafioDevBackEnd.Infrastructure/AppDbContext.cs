@@ -16,8 +16,8 @@ namespace DesafioDevBackEnd.Infrastructure
         {
         }
 
-        public DbSet<Transaction> Transactions { get; set; }
         public DbSet<TransactionType> TransactionTypes { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
 
         #region Protected Methods
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -34,7 +34,7 @@ namespace DesafioDevBackEnd.Infrastructure
 
         protected static void LoadingSeed(ModelBuilder modelBuilder)
         {
-            new Seed().UserSeed(modelBuilder.Entity<TransactionType>());
+            new Seed().TransactionTypeSeed(modelBuilder.Entity<TransactionType>());
         }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)

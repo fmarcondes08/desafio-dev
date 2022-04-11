@@ -16,7 +16,7 @@ namespace DesafioDevBackEnd.Infrastructure.Mappings
         {
             BaseConfigure(builder);
 
-            builder.ToTable("Transactions");
+            builder.ToTable("TransactionTypes");
 
             builder.Property(t => t.Description)
                 .HasColumnType("nvarchar(max)")
@@ -39,7 +39,7 @@ namespace DesafioDevBackEnd.Infrastructure.Mappings
                 .HasForeignKey(fk => fk.TransactionTypeId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            builder.HasIndex(p => new { p.Id })
+            builder.HasIndex(p => new { p.Type })
                  .IsUnique();
         }
     }

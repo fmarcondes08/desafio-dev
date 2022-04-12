@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesafioDevBackEnd.Domain.Interfaces.Repositories.Base
+namespace DesafioDevBackEnd.Domain.Interfaces.Repositories
 {
     public interface IRepository<T> where T : BaseEntity
     {

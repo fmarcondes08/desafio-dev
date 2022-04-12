@@ -1,5 +1,5 @@
 ﻿using DesafioDevBackEnd.Domain.Entities.Base;
-using DesafioDevBackEnd.Domain.Interfaces.Repositories.Base;
+using DesafioDevBackEnd.Domain.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesafioDevBackEnd.Infrastructure.Repositories.Base
+namespace DesafioDevBackEnd.Infrastructure.Repositories
 {
     public class Repository<T> : IRepository<T> where T : BaseEntity
     {

@@ -29,6 +29,8 @@ namespace DesafioDevBackEnd
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
+
             //Swagger - Enable this line and the related lines in Configure method to enable swagger UI
             services.AddSwaggerGen(options =>
             {
@@ -72,14 +74,25 @@ namespace DesafioDevBackEnd
                 options.EnableAnnotations();
             });
 
-            services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DesafioDevBackEnd", Version = "v1" });
             });
 
+            services.AddControllers();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
             services
-                .AddDatabase(_configuration);
+                .AddDatabase(_configuration)
+                .AddRepositories()
+                .AddServices();
+
+            services.AddDistributedMemoryCache();
+            services.AddSession(option => {
+                option.IdleTimeout = TimeSpan.FromMinutes(20);
+            });
+
+            services.AddHttpContextAccessor();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -92,9 +105,23 @@ namespace DesafioDevBackEnd
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DesafioDevBackEnd v1"));
             }
 
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "DesafioDevBackEnd v1");
+            });
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseSession();
+
+            app.UseCors(x => x
+               .AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader());
 
             // custom jwt auth middleware
             app.UseMiddleware<JwtMiddleware>();

@@ -1,6 +1,6 @@
 ﻿using DesafioDevBackEnd.Domain.Entities;
 using DesafioDevBackEnd.Domain.Interfaces.Repositories;
-using DesafioDevBackEnd.Infrastructure.Repositories.Base;
+using DesafioDevBackEnd.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

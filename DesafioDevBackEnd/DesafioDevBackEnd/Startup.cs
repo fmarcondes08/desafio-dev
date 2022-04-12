@@ -12,6 +12,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DesafioDevBackEnd.Application.Extensions;
+using System.Reflection;
+using System.IO;
+using DesafioDevBackEnd.Application.Middleware;
 
 namespace DesafioDevBackEnd
 {
@@ -26,6 +29,48 @@ namespace DesafioDevBackEnd
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Swagger - Enable this line and the related lines in Configure method to enable swagger UI
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "DesafioDevBackEndAPI", Version = "v1" });
+                options.DocInclusionPredicate((docName, description) => true);
+                //options.CustomSchemaIds(x => x.FullName);
+
+                //Note: This is just for showing Authorize button on the UI. 
+                //Authorize button's behaviour is handled in wwwroot/swagger/ui/index.html
+                options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Description = @"JWT Authorization header using the Bearer scheme. \r\n\r\n 
+                      Enter 'Bearer' [space] and then your token in the text input below.
+                      \r\n\r\nExample: 'Bearer 12345abcdef'",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer"
+                });
+                options.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                  {
+                    {
+                      new OpenApiSecurityScheme
+                      {
+                        Reference = new OpenApiReference
+                          {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = "Bearer"
+                          },
+                          Scheme = "oauth2",
+                          Name = "Bearer",
+                          In = ParameterLocation.Header,
+
+                        },
+                        new List<string>()
+                      }
+                    });
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                options.IncludeXmlComments(xmlPath);
+                options.EnableAnnotations();
+            });
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -51,7 +96,8 @@ namespace DesafioDevBackEnd
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            // custom jwt auth middleware
+            app.UseMiddleware<JwtMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {

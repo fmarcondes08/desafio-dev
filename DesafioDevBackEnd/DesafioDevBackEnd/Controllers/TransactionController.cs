@@ -33,12 +33,7 @@ namespace DesafioDevBackEnd.API.Controllers
         {
             try
             {
-                List<byte[]> listArchiveBytes = new List<byte[]>();
-                foreach (var item in file)
-                {
-                    listArchiveBytes.Add(Helpers.ConvertToBytes(item));
-                }
-                var result = await _service.ImportFile(listArchiveBytes);
+                var result = await _service.ImportFile(file);
 
                 Response.StatusCode = StatusCodes.Status200OK;
                 return new JsonResult(result);

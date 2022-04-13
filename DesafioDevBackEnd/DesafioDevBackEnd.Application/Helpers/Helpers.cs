@@ -3,7 +3,7 @@ using System.IO;
 
 namespace DesafioDevBackEnd.Application.Helpers
 {
-    public class Helpers
+    public static class Helpers
     {
         public static byte[] ConvertToBytes(IFormFile image)
         {

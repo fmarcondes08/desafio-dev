@@ -1,5 +1,6 @@
 ﻿using DesafioDevBackEnd.Application.Dtos;
 using DesafioDevBackEnd.Domain.Entities;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,6 @@ namespace DesafioDevBackEnd.Application.Interfaces
         /// </summary>
         /// <param name="fileBytes">file bytes</param>
         /// <returns></returns>
-        public Task<List<StoreOutputDto>> ImportFile(List<byte[]> fileBytes);
+        public Task<List<StoreOutputDto>> ImportFile(List<IFormFile> file);
     }
 }

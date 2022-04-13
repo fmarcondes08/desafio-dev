@@ -74,12 +74,10 @@ namespace DesafioDevBackEnd
                 options.EnableAnnotations();
             });
 
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "DesafioDevBackEnd", Version = "v1" });
-            });
-
-            services.AddControllers();
+            services.AddControllersWithViews()
+                    .AddNewtonsoftJson(options =>
+                    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                );
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services
@@ -98,6 +96,8 @@ namespace DesafioDevBackEnd
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            DatabaseManagementServiceExtension.MigrationInitialisation(app);
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

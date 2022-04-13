@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DesafioDevBackEnd.Infrastructure.Migrations
 {
-    public partial class Initial : Migration
+    public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -57,22 +57,21 @@ namespace DesafioDevBackEnd.Infrastructure.Migrations
                 columns: new[] { "Id", "Created_At", "Deleted_At", "Description", "Nature", "Signal", "Type", "Updated_At" },
                 values: new object[,]
                 {
-                    { new Guid("dd70f5a9-a6f3-4684-939e-d33558db1550"), new DateTime(2022, 4, 10, 21, 54, 44, 670, DateTimeKind.Local).AddTicks(6270), null, "Débito", "Entrada", "+", 1L, new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4123) },
-                    { new Guid("bb95ccac-5cd5-4872-ae1e-afa58ce7542b"), new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4816), null, "Boleto", "Saída", "-", 2L, new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4821) },
-                    { new Guid("6cdb7ac0-52f1-4f11-8346-562cd6b0ea48"), new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4824), null, "Financiamento", "Saída", "-", 3L, new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4825) },
-                    { new Guid("1fa0a2d6-bb96-4cac-a843-4bbe83e5ece6"), new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4827), null, "Crédito", "Entrada", "+", 4L, new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4828) },
-                    { new Guid("d12fea30-27f1-4e2d-8563-f6019f96a1aa"), new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4831), null, "Recebimento Empréstimo", "Entrada", "+", 5L, new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4832) },
-                    { new Guid("1d2a3d16-9e94-449f-ac41-890973457f95"), new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4834), null, "Vendas", "Entrada", "+", 6L, new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4835) },
-                    { new Guid("9ffb2183-e3a3-4bf4-9af1-2e812145eb53"), new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4837), null, "Recebimento TED", "Entrada", "+", 7L, new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4837) },
-                    { new Guid("2fc30eca-684d-4efa-8104-bfad420f4449"), new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4839), null, "Recebimento DOC", "Entrada", "+", 8L, new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4840) },
-                    { new Guid("560a6c3e-a654-4cf1-a5c5-77383ba232f0"), new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4848), null, "Aluguel", "Saída", "+", 9L, new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4849) }
+                    { new Guid("086f2ed5-ec23-46a2-9f27-185e29a33c0c"), new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(2177), null, "Débito", "Entrada", "+", 1L, new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8109) },
+                    { new Guid("6d2a5ca3-fd68-42ec-8c4b-4e615fd65525"), new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8806), null, "Boleto", "Saída", "-", 2L, new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8810) },
+                    { new Guid("b7654cdb-f97b-434f-88f1-3b0620965f4b"), new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8814), null, "Financiamento", "Saída", "-", 3L, new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8815) },
+                    { new Guid("6a81195c-cd3d-4f4c-ae87-1075a3eaec19"), new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8817), null, "Crédito", "Entrada", "+", 4L, new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8817) },
+                    { new Guid("df6a1dc1-19d1-40a0-8df5-d89ef69c58d3"), new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8820), null, "Recebimento Empréstimo", "Entrada", "+", 5L, new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8821) },
+                    { new Guid("d2ea9a29-c590-4ed0-b403-a73b6bacfce0"), new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8823), null, "Vendas", "Entrada", "+", 6L, new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8823) },
+                    { new Guid("5af6be11-88df-41c8-97bb-9a9c43a95feb"), new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8825), null, "Recebimento TED", "Entrada", "+", 7L, new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8826) },
+                    { new Guid("6f0f7b2d-c515-4420-be46-b0b5a9e73c67"), new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8834), null, "Recebimento DOC", "Entrada", "+", 8L, new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8835) },
+                    { new Guid("3f778df6-45e7-458f-bb2f-51cb46089182"), new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8837), null, "Aluguel", "Saída", "+", 9L, new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8838) }
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Transactions_TransactionTypeId",
                 table: "Transactions",
-                column: "TransactionTypeId",
-                unique: true);
+                column: "TransactionTypeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TransactionTypes_Type",

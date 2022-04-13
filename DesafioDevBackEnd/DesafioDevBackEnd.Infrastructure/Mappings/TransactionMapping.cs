@@ -42,8 +42,7 @@ namespace DesafioDevBackEnd.Infrastructure.Mappings
                 .HasColumnType("nvarchar(max)")
                 .IsRequired();
 
-            builder.HasIndex(p => new { p.TransactionTypeId })
-                 .IsUnique();
+            builder.HasIndex(p => new { p.TransactionTypeId });
         }
     }
 }

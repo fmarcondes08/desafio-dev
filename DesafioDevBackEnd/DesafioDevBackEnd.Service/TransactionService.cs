@@ -29,14 +29,15 @@ namespace DesafioDevBackEnd.Service
                 transactionsList = BytesToArchive(itemArchive);
             }
 
-            var addedItems = await _repository.AddTransactionList(transactionsList);
+            await _repository.AddRange(transactionsList);
+            var addedItems = await _repository.GetTransactionList(transactionsList);
             var groupItems = addedItems.GroupBy(x => x.StoreName).ToList();
             var result = new List<Store>();
 
             foreach (var item in groupItems)
             {
                 var store = new Store();
-                store.Name = item.Key;
+                store.Name = item.Key.Trim();
                 store.Transactions = item.ToList();
                 store.CurrentBalance = 0;
 
@@ -97,8 +98,8 @@ namespace DesafioDevBackEnd.Service
                 transaction.Value = Convert.ToDecimal(value) / 100;
                 transaction.CPF = CPF;
                 transaction.Card = Card;
-                transaction.StoreOwner = StoreOwner;
-                transaction.StoreName = StoreName;
+                transaction.StoreOwner = StoreOwner.Trim();
+                transaction.StoreName = StoreName.Trim();
                 transactionsList.Add(transaction);
             }
 

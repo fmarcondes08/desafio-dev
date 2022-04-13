@@ -33,7 +33,7 @@ namespace DesafioDevBackEnd.Infrastructure.Repositories
             return result.Entity;
         }
 
-        public async void AddRange(List<T> entity)
+        public async Task AddRange(List<T> entity)
         {
             await DbSet.AddRangeAsync(entity);
 

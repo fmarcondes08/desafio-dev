@@ -11,7 +11,7 @@ namespace DesafioDevBackEnd.Domain.Interfaces.Repositories
     {
         Task<T> Get(Guid id);
         Task<T> Add(T entity);
-        void AddRange(List<T> entity);
+        Task AddRange(List<T> entity);
         Task<T> Update(T entity);
     }
 }

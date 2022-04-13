@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  desafiodevbackend.api:
+    image: ${DOCKER_REGISTRY-}desafiodevbackendapi
+    extra_hosts: 
+        - "localhost:192.168.0.3"
+    build:
+        context: .
+        dockerfile: DesafioDevBackEnd/Dockerfile
+    depends_on:
+        - sql-server-db
+  sql-server-db:
+    hostname: 'sqlserver'
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+        SA_PASSWORD: "SqlServer123"
+        ACCEPT_EULA: "Y"
+    ports:
+        - "1433:1433"
+    expose:
+        - 1433

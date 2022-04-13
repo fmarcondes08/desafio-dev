@@ -62,8 +62,7 @@ namespace DesafioDevBackEnd.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TransactionTypeId")
-                        .IsUnique();
+                    b.HasIndex("TransactionTypeId");
 
                     b.ToTable("Transactions");
                 });
@@ -109,93 +108,93 @@ namespace DesafioDevBackEnd.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("dd70f5a9-a6f3-4684-939e-d33558db1550"),
-                            Created_At = new DateTime(2022, 4, 10, 21, 54, 44, 670, DateTimeKind.Local).AddTicks(6270),
+                            Id = new Guid("086f2ed5-ec23-46a2-9f27-185e29a33c0c"),
+                            Created_At = new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(2177),
                             Description = "Débito",
                             Nature = "Entrada",
                             Signal = "+",
                             Type = 1L,
-                            Updated_At = new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4123)
+                            Updated_At = new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8109)
                         },
                         new
                         {
-                            Id = new Guid("bb95ccac-5cd5-4872-ae1e-afa58ce7542b"),
-                            Created_At = new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4816),
+                            Id = new Guid("6d2a5ca3-fd68-42ec-8c4b-4e615fd65525"),
+                            Created_At = new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8806),
                             Description = "Boleto",
                             Nature = "Saída",
                             Signal = "-",
                             Type = 2L,
-                            Updated_At = new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4821)
+                            Updated_At = new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8810)
                         },
                         new
                         {
-                            Id = new Guid("6cdb7ac0-52f1-4f11-8346-562cd6b0ea48"),
-                            Created_At = new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4824),
+                            Id = new Guid("b7654cdb-f97b-434f-88f1-3b0620965f4b"),
+                            Created_At = new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8814),
                             Description = "Financiamento",
                             Nature = "Saída",
                             Signal = "-",
                             Type = 3L,
-                            Updated_At = new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4825)
+                            Updated_At = new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8815)
                         },
                         new
                         {
-                            Id = new Guid("1fa0a2d6-bb96-4cac-a843-4bbe83e5ece6"),
-                            Created_At = new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4827),
+                            Id = new Guid("6a81195c-cd3d-4f4c-ae87-1075a3eaec19"),
+                            Created_At = new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8817),
                             Description = "Crédito",
                             Nature = "Entrada",
                             Signal = "+",
                             Type = 4L,
-                            Updated_At = new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4828)
+                            Updated_At = new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8817)
                         },
                         new
                         {
-                            Id = new Guid("d12fea30-27f1-4e2d-8563-f6019f96a1aa"),
-                            Created_At = new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4831),
+                            Id = new Guid("df6a1dc1-19d1-40a0-8df5-d89ef69c58d3"),
+                            Created_At = new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8820),
                             Description = "Recebimento Empréstimo",
                             Nature = "Entrada",
                             Signal = "+",
                             Type = 5L,
-                            Updated_At = new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4832)
+                            Updated_At = new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8821)
                         },
                         new
                         {
-                            Id = new Guid("1d2a3d16-9e94-449f-ac41-890973457f95"),
-                            Created_At = new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4834),
+                            Id = new Guid("d2ea9a29-c590-4ed0-b403-a73b6bacfce0"),
+                            Created_At = new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8823),
                             Description = "Vendas",
                             Nature = "Entrada",
                             Signal = "+",
                             Type = 6L,
-                            Updated_At = new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4835)
+                            Updated_At = new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8823)
                         },
                         new
                         {
-                            Id = new Guid("9ffb2183-e3a3-4bf4-9af1-2e812145eb53"),
-                            Created_At = new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4837),
+                            Id = new Guid("5af6be11-88df-41c8-97bb-9a9c43a95feb"),
+                            Created_At = new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8825),
                             Description = "Recebimento TED",
                             Nature = "Entrada",
                             Signal = "+",
                             Type = 7L,
-                            Updated_At = new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4837)
+                            Updated_At = new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8826)
                         },
                         new
                         {
-                            Id = new Guid("2fc30eca-684d-4efa-8104-bfad420f4449"),
-                            Created_At = new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4839),
+                            Id = new Guid("6f0f7b2d-c515-4420-be46-b0b5a9e73c67"),
+                            Created_At = new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8834),
                             Description = "Recebimento DOC",
                             Nature = "Entrada",
                             Signal = "+",
                             Type = 8L,
-                            Updated_At = new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4840)
+                            Updated_At = new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8835)
                         },
                         new
                         {
-                            Id = new Guid("560a6c3e-a654-4cf1-a5c5-77383ba232f0"),
-                            Created_At = new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4848),
+                            Id = new Guid("3f778df6-45e7-458f-bb2f-51cb46089182"),
+                            Created_At = new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8837),
                             Description = "Aluguel",
                             Nature = "Saída",
                             Signal = "+",
                             Type = 9L,
-                            Updated_At = new DateTime(2022, 4, 10, 21, 54, 44, 671, DateTimeKind.Local).AddTicks(4849)
+                            Updated_At = new DateTime(2022, 4, 13, 0, 24, 44, 654, DateTimeKind.Local).AddTicks(8838)
                         });
                 });
 

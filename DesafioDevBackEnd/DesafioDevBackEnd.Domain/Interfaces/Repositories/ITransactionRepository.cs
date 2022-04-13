@@ -7,11 +7,11 @@ namespace DesafioDevBackEnd.Domain.Interfaces.Repositories
     public interface ITransactionRepository : IRepository<Transaction>
     {
         /// <summary>
-        /// Add a list of Transaction
+        /// Get a list of Transaction
         /// </summary>
         /// <param name="list">List of transaction</param>
         /// <returns>List of Transactions</returns>
-        public Task<List<Transaction>> AddTransactionList(List<Transaction> list);
+        public Task<List<Transaction>> GetTransactionList(List<Transaction> list);
         /// <summary>
         /// Get transactions by store
         /// </summary>

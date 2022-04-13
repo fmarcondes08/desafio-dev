@@ -16,13 +16,9 @@ namespace DesafioDevBackEnd.Infrastructure.Repositories
         {
         }
 
-        public async Task<List<Transaction>> AddTransactionList(List<Transaction> list)
+        public async Task<List<Transaction>> GetTransactionList(List<Transaction> list)
         {
-            DbSet.AddRange(list);
-
-            list = DbSet.Include(x => x.TransactionType).Where(x => list.Select(l => l.Id).Contains(x.Id)).ToList();
-
-            return list;
+            return DbSet.Include(x => x.TransactionType).Where(x => list.Select(l => l.Id).Contains(x.Id)).ToList();
         }
 
         public Task<List<Transaction>> GetTransactionByStore(string store)

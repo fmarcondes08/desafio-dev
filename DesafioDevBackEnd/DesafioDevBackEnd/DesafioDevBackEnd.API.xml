@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DesafioDevBackEnd.API</name>
+    </assembly>
+    <members>
+        <member name="M:DesafioDevBackEnd.API.Controllers.TransactionController.ImportAsync(System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile})">
+            <summary>
+            Import file
+            </summary>
+            <param name="file">CNAB File</param>
+            <returns>Data from imported file</returns>
+            <response code="200">Success</response> 
+            <response code="500">Returns Internal Server error</response>
+        </member>
+    </members>
+</doc>

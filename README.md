@@ -5,7 +5,6 @@
 - Abra a solução de BeckEnd
 - Selecione Docker Compose como projeto inical
 - Rode o projeto
-- 
 #  Executando aplicação frontend
 - Abra o diretorio da pasta front-end.
 - cd front-end 

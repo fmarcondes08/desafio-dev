@@ -1,4 +1,5 @@
 # Informações do Projeto
+- Projeto desenvolvido com a finalidade de importar dados CNAB.txt, com o objetivo de salvar os dados em uam banco de dados e exibí-los em tela para o usuario, informando um resumo das transações, agrupados por loja, alem de informar o saldo atual de cada conta.
 - WEBAPI: Desenvolvido em ASP.Net Core (5.0), utilizando a arquitetura de desenvolvimento DDD (Domain Driven Design) e como base de dados utilizando o SQL Server. E como documentação foi utilizada o Swagger (linguagem de descrição de interface para descrever APIs RESTful expressas usando JSON)
 - FRONT-END: Desenvolvido em Angular
 #  Executando aplicação backend

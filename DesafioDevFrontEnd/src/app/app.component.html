@@ -1,0 +1,14 @@
+<div class="upload">
+    <div class="body">
+      <div class="uploadButton">
+      <app-fileupload
+        *ngIf="data.length===0"
+        (complete)="send($event)"
+      ></app-fileupload>
+    </div>
+      <app-table [data]="data" *ngIf="data.length>0"></app-table>
+    </div>
+    <div class="footer">
+      <button class="btn-primary"  (click)="newProcess()" *ngIf="data.length>0">Back</button>
+    </div>
+  </div>

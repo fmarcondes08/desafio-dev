@@ -10,6 +10,10 @@ services:
         dockerfile: DesafioDevBackEnd/Dockerfile
     depends_on:
         - sql-server-db
+    ports:
+        - "54169:54169"
+    expose:
+        - 54169 
   sql-server-db:
     hostname: 'sqlserver'
     image: mcr.microsoft.com/mssql/server:2019-latest

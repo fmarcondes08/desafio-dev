@@ -13,7 +13,10 @@ namespace DesafioDevBackEnd.Application.Mappers
     {
         public Mappers()
         {
-            CreateMap<Transaction, TransactionOutputDto>();
+            CreateMap<Transaction, TransactionOutputDto>()
+                .ForMember(x => x.TransactionsType,
+                map => map.MapFrom(
+                    source => source.TransactionType));
 
             CreateMap<TransactionType, TransactionTypeOutputDto>();
 

@@ -1,0 +1,24 @@
+<h2 class="upload-title">Process Data</h2>
+
+<div class="choose_file">
+  <!-- <button class="upload-area">
+    <span class="upload-area-description" *ngIf="file">
+      <strong>{{ file.name }}</strong>
+    </span>
+    <span class="upload-area-title uploadfile" *ngIf="!file">Arraste aqui o arquivo.</span>
+    <span class="upload-area-description" *ngIf="!file">
+      Ou <br />
+      Selecionar arquivo no sistema <br /><strong></strong>
+    </span>
+  </button> -->
+  <input type="file"  accept="text/plain" (change)="selectFile($event)" />
+
+</div>
+<br>
+<!-- <p class="upload-description">
+  <button  class="btn-primary" (click)="getdata()" >Visualizar últimos dados processados</button>
+</p> -->
+
+<p class="errormessage"style="color: brown;" *ngIf="returnMessage">
+  Mensagem: {{returnMessage}}
+</p>

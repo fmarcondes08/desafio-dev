@@ -12,4 +12,4 @@
 ### Como executar a aplicação frontend
 - Para executar a aplicação: `yarn start` ou `npm run start`
 - A aplicação frontend estará disponível no endereço: `http://localhost:4200`.
-- Abra o arquivo Services > UploadServices.ts e verifique se a url configurada está de acordo com a url que foi aberta ao rodar a api. Se a url não estiver igual, atualize a urlno arquivo citado.
+- Abra o arquivo Services > UploadServices.ts e verifique se a url configurada está de acordo com a url que foi aberta ao rodar a api. Se a url não estiver igual, atualize a url no arquivo citado.
